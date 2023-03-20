@@ -67,12 +67,14 @@ public class VistaTicTacToe extends javax.swing.JFrame {
         posicion1 = new javax.swing.JLabel();
         posicion2 = new javax.swing.JLabel();
         posicion3 = new javax.swing.JLabel();
-        btnReinicio = new javax.swing.JButton();
         lbTurno = new javax.swing.JLabel();
+        panelContador = new javax.swing.JPanel();
         lbX = new javax.swing.JLabel();
         lbPuntosX = new javax.swing.JLabel();
         lbO = new javax.swing.JLabel();
         lbPuntosO = new javax.swing.JLabel();
+        btnReinicio = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -82,7 +84,9 @@ public class VistaTicTacToe extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Tablero.setBackground(new java.awt.Color(0, 153, 153));
+        panelPrincipal.setBackground(new java.awt.Color(220, 234, 255));
+
+        Tablero.setBackground(new java.awt.Color(141, 181, 217));
 
         posicion7.setBackground(new java.awt.Color(255, 255, 255));
         posicion7.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -222,6 +226,30 @@ public class VistaTicTacToe extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        lbTurno.setBackground(new java.awt.Color(87, 120, 176));
+        lbTurno.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbTurno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbTurno.setText("Turno de X");
+        lbTurno.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+
+        panelContador.setBackground(new java.awt.Color(141, 181, 217));
+        panelContador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        lbX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbX.setText("X =");
+
+        lbPuntosX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbPuntosX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbPuntosX.setText("0");
+
+        lbO.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbO.setText("O =");
+
+        lbPuntosO.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbPuntosO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbPuntosO.setText("0");
+
         btnReinicio.setText("Reiniciar");
         btnReinicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,85 +257,84 @@ public class VistaTicTacToe extends javax.swing.JFrame {
             }
         });
 
-        lbTurno.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbTurno.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTurno.setText("Turno de X");
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Puntuación");
 
-        lbX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbX.setText("X ->");
-
-        lbPuntosX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbPuntosX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPuntosX.setText("0");
-
-        lbO.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbO.setText("O ->");
-
-        lbPuntosO.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbPuntosO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPuntosO.setText("0");
+        javax.swing.GroupLayout panelContadorLayout = new javax.swing.GroupLayout(panelContador);
+        panelContador.setLayout(panelContadorLayout);
+        panelContadorLayout.setHorizontalGroup(
+            panelContadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelContadorLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lbX)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbPuntosX)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbO)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbPuntosO)
+                .addGap(27, 27, 27))
+            .addGroup(panelContadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(panelContadorLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(btnReinicio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelContadorLayout.setVerticalGroup(
+            panelContadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelContadorLayout.createSequentialGroup()
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelContadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelContadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbO)
+                        .addComponent(lbPuntosO))
+                    .addGroup(panelContadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbX)
+                        .addComponent(lbPuntosX)))
+                .addGap(18, 18, 18)
+                .addComponent(btnReinicio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Tablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(panelPrincipalLayout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lbX)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(btnReinicio)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(panelPrincipalLayout.createSequentialGroup()
-                                .addComponent(lbPuntosX)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                                .addComponent(lbO)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbPuntosO)
-                                .addGap(96, 96, 96))))))
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelContador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Tablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(lbTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Tablero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbX)
-                    .addComponent(lbPuntosX)
-                    .addComponent(lbO)
-                    .addComponent(lbPuntosO))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnReinicio)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(panelContador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -471,6 +498,7 @@ public class VistaTicTacToe extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -489,6 +517,7 @@ public class VistaTicTacToe extends javax.swing.JFrame {
     private javax.swing.JLabel lbPuntosX;
     private javax.swing.JLabel lbTurno;
     private javax.swing.JLabel lbX;
+    private javax.swing.JPanel panelContador;
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JLabel posicion1;
     private javax.swing.JLabel posicion2;
